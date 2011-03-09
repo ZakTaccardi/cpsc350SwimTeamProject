@@ -1,0 +1,46 @@
+create database SwimTeam;
+use SwimTeam;
+
+CREATE USER 'user' IDENTIFIED BY 'password';
+grant CREATE,INSERT,DELETE,UPDATE,SELECT on swimteam.* to user@localhost;
+
+
+CREATE TABLE swimmers
+(
+swimmerID VARCHAR(20),
+firstName VARCHAR(20),
+middleInitial CHAR(1),
+lastName VARCHAR(20),
+birthday DATE,
+swimGroup VARCHAR(10)
+);
+
+CREATE TABLE families
+(
+familyID INT(10) NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (familyID),
+email VARCHAR(30),
+password VARCHAR(40),
+parentFirstName VARCHAR(20),
+parentLastName VARCHAR(20),
+yearJoined INT(4),
+streetAddress VARCHAR(30),
+city VARCHAR(20),
+state VARCHAR(20),
+zip VARCHAR(20),
+homePhone VARCHAR(20),
+workPhone VARCHAR(20),
+cellPhone VARCHAR(20),
+accessLevel CHAR(1),
+overallAFD DEC(8,2),
+currentAFD DEC(8,2)
+);
+
+
+
+CREATE USER 'user' IDENTIFIED BY 'password';
+grant CREATE,INSERT,DELETE,UPDATE,SELECT on swimteam.* to user@localhost;
+
+
+
+INSERT INTO families VALUES ('drinkdrpeppers@aol.com', SHA('qwerty'), 'Zak', 'Taccardi', '1989', '12110 Heather Way', 'Herndon', 'VA', '20170', '7034069999', '7032659999', '7032009999', '3', '100.00', '200.00');

@@ -1,8 +1,8 @@
 create database SwimTeam;
 use SwimTeam;
 
-CREATE USER 'user' IDENTIFIED BY 'password';
-grant CREATE,INSERT,DELETE,UPDATE,SELECT on swimteam.* to user@localhost;
+
+GRANT ALL PRIVILEGES ON swimteam.* to 'user'@'localhost' IDENTIFIED BY 'user';
 
 
 CREATE TABLE swimmers
@@ -35,8 +35,3 @@ accessLevel CHAR(1),
 overallAFD DEC(8,2),
 currentAFD DEC(8,2)
 );
-
-
-
-CREATE USER 'user' IDENTIFIED BY 'password';
-grant CREATE,INSERT,DELETE,UPDATE,SELECT on swimteam.* to user@localhost;

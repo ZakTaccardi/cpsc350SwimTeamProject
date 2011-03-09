@@ -40,7 +40,3 @@ currentAFD DEC(8,2)
 
 CREATE USER 'user' IDENTIFIED BY 'password';
 grant CREATE,INSERT,DELETE,UPDATE,SELECT on swimteam.* to user@localhost;
-
-
-
-INSERT INTO families VALUES ('drinkdrpeppers@aol.com', SHA('qwerty'), 'Zak', 'Taccardi', '1989', '12110 Heather Way', 'Herndon', 'VA', '20170', '7034069999', '7032659999', '7032009999', '3', '100.00', '200.00');

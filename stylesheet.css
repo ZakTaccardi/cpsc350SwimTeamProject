@@ -1,0 +1,447 @@
+
+/* ---------------Global Styles--------------- */
+a { color: #1b5369; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:visited { }
+ 
+h1 { color: #9a2825; font:bold 20px Georgia Arial, Helvetica, sans-serif; margin: 10px 0px 10px 0px; }
+h2 { color: #000000; font:bold 14px Arial, Helvetica, sans-serif; margin: 0px 0px 10px 0px; }
+h3 { color: #9a2825; font-size: 12px; font-weight: bold; margin:0; }
+h4 { color: #000; font-size: 12px; font-weight: bold;  }
+ 
+html, body, p, div, input, select { font: normal 12px Arial, Helvetica, sans-serif; color: #666666; line-height: 150%; }
+form, input { padding:0; margin:0; }
+ 
+a img { border: 0; }
+ 
+.section_heading { color:#ff0000; font-weight: bold; text-decoration:underline; font-style:italic; font-size: 1.4em; }
+ 
+.roweven { background:#efefef; }
+ 
+#page { margin:30px 0px 0px 0px; background: #082833 url(graphics/design/page_bg2.jpg) repeat-x left top; }
+ 
+#header { background: transparent url(graphics/design/transparent_photo1.jpg) no-repeat right top; height: 238px; }
+#headerTransparent { background: transparent url(graphics/design/header_bg.png) no-repeat left top; height: 238px; }
+/* #headerTransparent { background: transparent url(graphics/design/header_transparent.png) no-repeat left top; height: 238px; } */
+ 
+ 
+#headerOLD { background: #fff url(graphics/design/header_bg.png) no-repeat left top; height: 238px; }
+ 
+#header #logo { float: left; padding-left:85px; width: 279px; height:203px; }
+#header #logo a { width: 279px; height: 201px; display: block; background: transparent url(graphics/design/Swimrays_logo_left.png) no-repeat top left;}
+ 
+#header h1 { display: none; }
+ 
+#headerMenu { width: 100%; height: 35px; background: transparent url(graphics/design/menu_top_bg.png) no-repeat left top; clear:both;}
+ 
+#content { background: transparent url(graphics/design/content_bg_rp.png) repeat-y 45px top; }
+#content .left { width: 252px; padding-top:20px; background: transparent; vertical-align: top; float:left; }
+#content .center:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+#content .center { width: 648px; height:680px; padding:0px 30px; background: transparent url(graphics/design/watermark_bg.png) no-repeat right 230px; vertical-align: top; float:left; }
+html>body #content .center { min-height: 680px; height: auto; }
+ 
+#contentTop { background: transparent url(graphics/design/content_bg_tp.png) no-repeat 45px top; width: 960px; padding: 0px 45px; }
+#contentTop:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+#contentBot:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+#contentBot { background: transparent url(graphics/design/content_bg_bt.png) no-repeat left bottom; width: 960px; height: 730px; }
+html>body #contentBot { min-height: 730px; height: auto; }
+#footer { height: 107px; background: transparent url(graphics/design/footer_bg.png) no-repeat left bottom; color: #000; }
+#footerContent p { margin:0; padding:0; color: #000; }
+#footerContent { padding: 25px 100px 0px 100px; color: #000; }
+ 
+.canvas { clear: both;  width: 1050px; margin:0 auto; }
+.canvas:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+ 
+.clearIT { clear:both; }
+.clearIT:after { content: "."; display: block; height: 0; clear:both; visibility: hidden;}
+ 
+ 
+.newsListHeadlineTD { }
+.newsListHeadline { font: bold 15px Verdana, Helvetica, Arial, sans-serif; color: #0068a8; }
+.newsListPublishline { font: normal 9px Verdana, Helvetica, Arial, sans-serif; color: #000000; }
+.newsListBlurb {}
+.newsListMoreLink {}
+ 
+.eventHeadlineTD { }
+.eventHeadline { color: #6989c4; font-weight: bold; }
+.eventDetail { }
+.eventMoreLink { }
+.eventDateHeader { }
+ 
+.datebox { font-weight:bold; }
+ 
+.bannerLeft { text-align:center; }
+ 
+#search { float: right; padding-right: 5px; }
+#search .queryLabel { float: left; font:bold 11px Verdana, Helvetica, Arial, sans-serif; color: #ffffff; margin: 5px 3px 0px 0px; }
+#search .searchInput { float: left; margin: 3px 0px; }
+#search .submit { float: left; margin: 5px 0px 0px 2px; }
+ 
+.sendpageBody { background:#082833; font: normal 12px Verdana, Helvetica, Arial, sans-serif; }
+.sendpageHeader { color:#fff; font: bold 12px Verdana, Helvetica, Arial, sans-serif; }
+.sendpageFormTextRequired { color:#fff; font: normal 12px Verdana, Helvetica, Arial, sans-serif; }
+.sendpageFormText { color:#fff; font: normal 12px Verdana, Helvetica, Arial, sans-serif; }
+ 
+#empowered { height: 25px; padding-right: 20px; padding-top: 15px; }
+#empowered a { color:#fff; }
+ 
+.directoryColumn { font-weight:bold; color:#000; background: #59a4c1; }
+ 
+.shoppingAlert { color: red; font-size: 8pt; }
+.shoppingBody { font-size: 8pt; }
+.shoppingCartEvenRow { background-color: #ffffff; color:#002d62; }
+.shoppingCartOddRow { background-color: #ebebeb; color:#002d62; }
+.shoppingCartTableHeader { background-color: #002d62; color: #ffffff; font-size: 8pt; font-weight: bold; }
+.shoppingForm { font-size: 8pt; color:#002d62; }
+.shoppingFormQuantity { background-color: #ffffff; font-size: 8pt; }
+.shoppingFormRequired { font-size: 8pt; font-weight: bold; color:#002d62; }
+.shoppingFormRequired input, .shoppingFormRequired select { font-weight: normal; color:#000; }
+.shoppingHeading { color:#002d62; }
+.shoppingInStock { }
+.shoppingItemHeading { }
+.shoppingOutOfStock { color: #dd0000; }
+.shoppingLowStock { }
+.shoppingTable { background-color: #e8e8e8; color:#002d62; }
+.shoppingTableBorder { background-color: #ffffff; }
+/* End Global Styles */
+ 
+/* ---------------General Module Styles--------------- */
+.itemCount { }
+.itemList { clear: both; } 
+.itemList:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.itemList h2 a { text-decoration: none; }
+.itemList h2 a:hover { text-decoration: underline; }
+.itemList span { display: block; }
+.itemLabel { font-weight: bold; }
+.itemList span.itemLabel { display: inline; }
+.bottomNavigation { clear: both; }
+.goBack { }
+.errorMessage{ font-weight:bold; color:#f00; }
+/* End General Module Styles */
+ 
+/* --------------- Event Styles --------------- */
+ 
+/* ModuleBegin::events */
+#homeEvents { width: 280px; padding-left: 20px; float: left; border-top: 1px solid #b2b2b2; }
+#homeEvents .eventsListerWrapper {  padding-bottom: 15px; }
+#homeEvents .eventsListerWrapper h1 { color: #60b02d; margin: 0; padding: 10px 0px 0px 0px;  }
+#homeEvents .eventsListerWrapper .itemList { padding-left: 15px; }
+ 
+ 
+/* Events Lister */
+.eventsListerWrapper .itemList {  }
+.eventDateHeading { font-weight: bold; border-bottom: 1px solid #ccc; color: #fff; background:#a51a1f; }
+.eventsListerWrapper h2 { margin: 10px 0px 0px 0px; padding: 4px 0px 4px 5px; }
+.eventsListerWrapper h3 { margin: 0px; padding: 10px 0px 0px 0px; }
+.eventDate { }
+.eventTime { }
+.eventBlurb { }
+ 
+/* Events Detail */
+.eventsDetailWrapper { }
+.eventDate, .eventsDetailWrapper .eventTime, .eventsDetailWrapper .eventLocationMap, .eventsDetailWrapper .eventLocationAddress,
+ .eventsDetailWrapper .eventLocationDriving, .eventsDetailWrapper .eventContact, .eventsDetailWrapper .eventPhone,
+ .eventsDetailWrapper .eventEmail, .eventsDetailWrapper .eventRSVP, .eventsDetailWrapper .eventTicket,
+ .eventsDetailWrapper .eventTicket1, .eventsDetailWrapper .eventTicket2 ,.eventsDetailWrapper .eventTicket3,
+ .eventsDetailWrapper .eventTicket4, .eventsDetailWrapper .eventTicket5, .eventsDetailWrapper .eventTicket6 { display: block; }
+.eventLocation, .eventRSVP, .eventTicketWrapper{ padding: 5px 0px; }
+.eventDate {  }
+.eventTime {  }
+.eventLocation { }
+.eventLocationMap {  }
+.eventLocationAddress {  }
+.eventLocationDriving {  } 
+.eventContact {  }
+.eventPhone {  }
+.eventEmail {  }
+.eventRSVP {  }
+.eventTicketWrapper { }
+.eventTicket {  }
+.eventBody { }
+ 
+/* Events Small Calendar */
+ 
+.calendarSmallWrapper { font-size: 12px; padding: 0; margin: 0;  }
+#calendar, #calendarBox { padding: 0; margin: 0; background:transparent; }
+.cal { text-align: center; margin-left: auto; margin-right: auto; padding: 0; background: transparent; }
+ 
+.calTop { background: transparent url(graphics/design/cal_top.jpg) no-repeat top left; 
+ width: 195px; height: 28px;}
+.calPrev { float: left; width: 30px; height: 28px; }
+.calPrev a { width: 30px; }
+.calNext { float: right; width: 29px; height: 28px; }
+.calNext a { width: 29px; }
+.calPrev a, .calNext a { text-decoration: none; display: block; height: 28px; }
+.calPrev a:hover, .calNext a:hover { text-decoration: none; }
+.calMonth { float: left; width: 135px; padding-top: 8px; }
+.calMonth a { text-decoration: none; display: block; color: #ffffff; text-align: center; font-weight: bold; }
+.calMonth a:hover { text-decoration: underline; }
+ 
+.calGrid { background: transparent url(graphics/design/cal_bg.jpg) repeat-y top left;  width: 189px; padding: 0px 3px 0px 3px; margin: 0;}
+.calGrid table { width: 189px; padding: 0; margin: 0; }
+.calGrid td { background: transparent url(graphics/design/cal_day.jpg) no-repeat 1px 1px;  width: 27px; height: 18px; line-height: 13px; color: #1b5369; padding: 0; margin: 0; font-size: 12px; text-align: center; }
+.calGrid .calWeek td { color: #082833; background: none; font-weight: bold; }
+.calGrid tr.calWeek { font-weight: bold; text-align: center; }
+.calDayOn a { font-weight: bold; text-decoration: none;  color: #1b5369;}
+.calDayOn a:hover { text-decoration: underline; }
+.calGrid td.calTodayOff, .calGrid td.calTodayOn { font-weight: bold; background: transparent url(graphics/design/cal_day_on.jpg) no-repeat 1px 1px; color: #fff;}
+.calGrid td.calTodayOn a { text-decoration: underline; font-weight: bold; color: #fff;}
+.calGrid td.calDayOff { background: 0; }
+.calBottom { background: transparent url(graphics/design/cal_bot.jpg) no-repeat top left; width: 195px; padding: 15px 10px; text-align: left; }
+.calMonthGlance { padding: 5px 0px 3px 0px; }
+.calBottom a { color: #fff; }
+   
+/* Events Month at a Glance */
+.calendarWrapper table { width: 100%; table-layout: fixed; }
+.calendarWrapper .calendarMonths { background-color: #9a2825; text-align: center;  vertical-align: middle; }
+.calendarWrapper .calendarMonths a { display: block; color: #fff; font-weight: bold; font-size: 12px; text-decoration: none; padding: 5px 0px; }
+.calendarWrapper .calendarMonths a:hover { background-color: #082833; color: #fff; }
+.calendarWrapper .calendarDays { border-collapse: collapse; table-layout: fixed; }
+.calendarWrapper .calendarDays .title { font-size: 14px; font-weight: bold; color: #fff; padding: 10px 0px; background: #9a2825; }
+.calendarWrapper .calendarDays .prevNextLink, .calendarWrapper .calendarDays .prevNextLink a { color: #fff; background: #9a2825; }
+.calendarWrapper .calendarDays .normal { display: none; }
+.calendarWrapper .calendarDays td { text-align: center; border: 1px solid #082833; font-weight: bold; }
+.calendarWrapper .calendarDays .weekdays { height: 30px; background-color: #9a2825; color: #fff; }
+.calendarWrapper .calendarDays .emptyDay { height: 60px; text-align: left; vertical-align: top; background-color: #efefef; }
+.calendarWrapper .calendarDays .eventToday { height: 60px; text-align: left; vertical-align: top; background-color: #9a2825; padding-left: 5px; color: #fff; }
+.calendarWrapper .calendarDays .eventToday a { color: #fff; }
+.calendarWrapper .calendarDays .eventOff { height: 60px; text-align: left; vertical-align: top; padding-left: 5px; }
+.calendarWrapper .calendarDays .eventOn { height: 60px; text-align: left; vertical-align: top; background-color: #fff; padding: 0px 5px 5px 5px; color: #1b5369; }
+.calendarWrapper .calendarDays .eventOn a { }
+.eventsGlanceWrapper {  }
+/* ModuleEnd::events */
+ 
+/* Pagination */
+.pagination { clear: both; display: block; }
+.pagination a, .pagination a:link, .pagination a:visited { text-decoration:none; }
+.pagination .prevnextCurrent, .pagination .prevnextWindow, .pagination .prevnextWindowArrow { border:solid 1px #ccc; margin:0; padding:4px 6px; font-size:11px; margin-right:2px; display:inline; display:inline-block; }
+.pagination a.prevnextWindow:hover, .pagination a.prevnextLink:hover, .pagination .prevnextWindowArrow:hover { border:solid 1px #000; color:#000; }
+.pagination .prevnextCurrent {background:#ccc; color:#000; font-weight:bold; padding:4px 6px; }
+.pagination a.prevnextLink { border:1px solid #ccc; padding:4px 6px 4px; margin-right:2px; font-size:11px; display:block; }
+/* End Pagination */
+ 
+/* Send Page Styles */
+.sendpage { clear:both; }
+.sendpageBody div, .sendpageBody td { padding: 2px 0px; }
+/* End Send Page Styles */
+ 
+/* ModuleBegin::gendocs */
+.webpageWrapper { }
+/* ModuleEnd::gendocs */
+ 
+/* ModuleBegin::news */
+.newsListWrapper { clear: both; }
+.newsListWrapper h2 { margin-top: 0px; }
+.newsListWrapper .newsThumbnail { float: left; }
+.newsListWrapper .newsThumbnail img { margin: 0px 15px 5px 0px; padding: 5px; border: 1px solid #ccc; }
+.newsListWrapper .newsPublish { }
+.newsListWrapper .newsBlurb { }
+ 
+.newsDetailWrapper { }
+.newsDetailWrapper .newsPublish, .newsDetailWrapper .newsAuthor, .newsDetailWrapper .newsSource { display: block; }
+.newsDetailWrapper .pagination { height: 50px; }
+.newsPublish { }
+.newsAuthor { }
+.newsAuthorLink { }
+.newsSource { }
+.newsBody { clear: both; }
+.newsCopyright { clear: both; }
+.newsMore { }
+/* ModuleEnd::news */
+ 
+/* MenuBegin:menu_main */
+#menu_main:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+ul.menu_main ,ul.menu_main li,ul.menu_main ul { margin: 0; border: 0; padding: 0; list-style: none; width: 252px; }
+ul.menu_main li { position: relative; display: block !important; display: inline;/*For IE*/ float: left;/*IE 7*/ }
+ 
+/* 1st Level */
+ul.menu_main a { color: #fff; background: transparent url(graphics/design/bullet_off.png) no-repeat 25px 50%; text-decoration: none; text-align: left; padding: 5px 10px 1px 55px; font: bold 12px Arial, Helvetica, sans-serif; display: block; height: auto !important; height: 1%; /*For IE*/ }
+ul.menu_main a:hover { color: #fff; background: transparent url(graphics/design/bullet_on.png) no-repeat 25px 50%; text-decoration: underline; }
+ul.menu_main a.current { background: transparent url(graphics/design/bullet_on.png) no-repeat 25px 50%; text-decoration: none; }
+ 
+/* 2nd Level */
+ul.menu_main li li a { color: #fff; font-weight: normal; padding-left: 65px; background: transparent url(graphics/design/menu_left_subbullet.png) no-repeat 25px 50%; text-decoration: none; }
+ul.menu_main li li a:hover { color: #fff; background: transparent url(graphics/design/menu_left_subbullet.png) no-repeat 25px 50%; text-decoration: underline; }
+ 
+/* 3rd Level */
+ul.menu_main li li li a { color: #fff; padding-left: 75px; background: transparent url(graphics/design/menu_left_subbullet.png) no-repeat 33px 50%; text-decoration: none; }
+ul.menu_main li li li a:hover { color: #fff; padding-left: 41px; background: transparent url(graphics/design/menu_left_subbullet.png) no-repeat 33px 50%; text-decoration: underline; }
+ 
+/* 4th Level */
+ul.menu_main li li li li a { color: #fff; padding-left: 49px; background: transparent url(graphics/design/menu_left_subbullet.png) no-repeat 41px 50%; text-decoration: none; }
+ul.menu_main li li li li a:hover { color: #fff; padding-left: 49px; background: transparent url(graphics/design/menu_left_subbullet.png) no-repeat 41px 50%; text-decoration: underline; }
+ 
+/* MenuEnd:menu_main */
+ 
+/* ModuleBegin::directory */
+.directoryListWrapper { }
+.directoryDetailWrapper { }
+.directoryName { }
+.directoryCategory { }
+/* ModuleEnd::directory */
+ 
+#freedom_calendar { position: absolute; left: 100px; top: 100px; width: 175px; z-index: 100; visibility: hidden; clip:rect(0px 175px 145px 0px); height:145px; }
+#freedom_calendar .calBorderColor { border:1px solid #ccc; }
+#freedom_calendar .calBgColor { background-color:#426995; color:#fff; }
+#freedom_calendar .calDaysColor { background-color:#426995; color:#fff; }
+#freedom_calendar .calWeekend { background-color:#426995; }
+#freedom_calendar .calWeekend a { color:#fff; background-color:#426995; }
+#freedom_calendar .cal { background-color: #15528A; color:#ffffff; font-size:8pt; }
+#freedom_calendar .cal a { color:#fff; }
+#freedom_calendar .calHighlightColor { color:#fff; }
+ 
+/* ModuleBegin::photo */
+.photoAlbumListerWrapper { padding: 15px 0px; border-bottom: 1px solid #e5e5e5;}
+.photoBorder { width: 200px; height: 200px; padding: 5px; margin: 0px 15px 0px 0px; border: 1px solid #aaa; float: left;}
+.photoAlbumImage { width: 200px; height: 200px; background: transparent no-repeat 50% 50%; }
+.photoAlbumImage a { width: 200px; height: 200px; display: block; text-indent: -3000px; }
+ 
+#thumbPhotos { padding: 15px 0px 0px 0px; }
+#thumbPhotos ul { padding: 0; margin: 0; list-style: none; }
+#thumbPhotos li { width: 110px; height: 110px; padding: 0px 10px 10px 0px; margin: 0; float: left; }
+#thumbPhotos a { width: 100px; height: 100px; display: block; text-indent: -3000px; background: transparent no-repeat 50% 50%; border:1px solid #aaa; padding:4px; }
+ 
+/* Edit jquery.lightbox-0.5.js file to change these image names or locations */
+.includeLightboxImg1 { background-image: url(graphics/scripts/images/lightbox-blank.gif);}
+.includeLightboxImg2 { background-image: url(graphics/scripts/images/lightbox-btn-close.gif);}
+.includeLightboxImg3 { background-image: url(graphics/scripts/images/lightbox-btn-next.gif);}
+.includeLightboxImg4 { background-image: url(graphics/scripts/images/lightbox-btn-prev.gif);}
+.includeLightboxImg5 { background-image: url(graphics/scripts/images/lightbox-ico-loading.gif);}
+ 
+/**
+ * jQuery lightBox plugin
+ * This jQuery plugin was inspired and based on Lightbox 2 by Lokesh Dhakar (http://www.huddletogether.com/projects/lightbox2/)
+ * and adapted to me for use like a plugin from jQuery.
+ * @name jquery-lightbox-0.5.css
+ * @author Leandro Vieira Pinho - http://leandrovieira.com
+ * @version 0.5
+ * @date April 11, 2008
+ * @category jQuery plugin
+ * @copyright (c) 2008 Leandro Vieira Pinho (leandrovieira.com)
+ * @license CC Attribution-No Derivative Works 2.5 Brazil - http://creativecommons.org/licenses/by-nd/2.5/br/deed.en_US
+ * @example Visit http://leandrovieira.com/projects/jquery/lightbox/ for more informations about this jQuery plugin
+ */
+#jquery-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	width: 100%;
+	height: 500px;
+}
+#jquery-lightbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+	line-height: 0;
+}
+#jquery-lightbox a img { border: none; }
+#lightbox-container-image-box {
+	position: relative;
+	background-color: #fff;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+}
+#lightbox-container-image { padding: 10px; }
+#lightbox-loading {
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	height: 25%;
+	width: 100%;
+	text-align: center;
+	line-height: 0;
+}
+#lightbox-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+#lightbox-container-image-box > #lightbox-nav { left: 0; }
+#lightbox-nav a { outline: none;}
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext {
+	width: 49%;
+	height: 100%;
+	zoom: 1;
+	display: block;
+}
+#lightbox-nav-btnPrev { 
+	left: 0; 
+	float: left;
+}
+#lightbox-nav-btnNext { 
+	right: 0; 
+	float: right;
+}
+#lightbox-container-image-data-box {
+	font: 10px Verdana, Helvetica, sans-serif;
+	background-color: #fff;
+	margin: 0 auto;
+	line-height: 1.4em;
+	overflow: auto;
+	width: 100%;
+	padding: 0 10px 0;
+}
+#lightbox-container-image-data {
+	padding: 0 10px; 
+	color: #666; 
+}
+#lightbox-container-image-data #lightbox-image-details { 
+	width: 70%; 
+	float: left; 
+	text-align: left; 
+}	
+#lightbox-image-details-caption { font-weight: bold; }
+#lightbox-image-details-currentNumber {
+	display: block; 
+	clear: left; 
+	padding-bottom: 1.0em;	
+}			
+#lightbox-secNav-btnClose {
+	width: 66px; 
+	float: right;
+	padding-bottom: 0.7em;	
+}
+/* ModuleEnd::photo */
+ 
+/* ModuleBegin::newsfeed */
+.newsfeedListWrapper { }
+.newsfeedNumber { }
+.newsfeedTitle { }
+.newsfeedSource { }
+.newsfeedDetailWrapper { }
+.newsfeedDetailWrapper .newsItem {border-bottom:1px solid #ccc; margin-bottom:10px;padding-bottom:10px;}
+.newsfeedDetailWrapper .newsItem img {margin:0 10px 0 0;}
+.newsfeedDetailWrapper .newsItem span {display:block;}
+.newsfeedDetailWrapper .newsItem .newsListHeadline {font-size:120%;}
+.newsfeedDetailWrapper .newsItem .newsListPublishline {font-size:90%;}
+/* ModuleEnd::newsfeed */
+ 
+/* ModuleBegin::directory-records */
+.directoryListWrapper {
+}
+.directoryDetailWrapper {
+}
+.directoryName {
+}
+.directoryCategory {
+}
+/* ModuleEnd::directory-records */
+ 
+/* ModuleBegin::directory-lcrecords */
+.directoryListWrapper {
+}
+.directoryDetailWrapper {
+}
+.directoryName {
+}
+.directoryCategory {
+}
+/* ModuleEnd::directory-lcrecords */

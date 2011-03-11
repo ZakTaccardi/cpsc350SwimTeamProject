@@ -9,7 +9,7 @@ include('siteNavigator.php');
 ?>
 
 <!-- Page info goes below-->
-<h1>This is the home page, man</h1> 
+<h1>This is the home page, man</h1> </div> 
 
 <!-- Page info goes above-->
 <?php

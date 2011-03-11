@@ -6,15 +6,26 @@ include('header.php');
 
 <html>
 <body>
+<?php
+include('siteNavigator.php');
+?>
 
-<h2> Login Page </h2>
+<!-- Page info goes below-->
+<h1>Login</h1>
 
 <form action = "loginController.php" method = "post" />
-E-mail:  <input type = "text" name = "email" /> <br/>
-Password:  <input type = "password" name = "password" />  <br/>
+<table>
+<tr>
+<td>E-mail:</td>  
+<td> <input type = "text" name = "email" /> </td> <br/>
+</tr><tr>
+<td>Password:</td> 
+<td>  <input type = "password" name = "password" /> </td>  <br/>
+</tr>
+</table>
 <input type = "submit" value = "Login" id="submit" />
-</form>
 <p>Not registered? Register <a href = "createAccount.php"> here </a>!</p>
+</form>
 
 <?php
 if($_SESSION['badLogin'] == 1)
@@ -29,5 +40,13 @@ else
 {
 }
 ?>
+<!-- Page info goes above-->
+<?php
+include('footer.php');
+?>
+</body>
+</html>
+
+
 </body>
 </html>

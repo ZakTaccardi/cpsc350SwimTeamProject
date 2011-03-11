@@ -1,14 +1,19 @@
+<?php 
+session_start();
+include('header.php');
+?>
 <html>
-
+<body>
 <?php
-include('header2.php');
+include('siteNavigator.php');
 ?>
 
-<h2> Register Family Page </h2>
+<!-- Page info goes below-->
+<h1> Register Family</h1>
 
 <form action = "createAccountController.php" method = "post">
 
-<table border="1">
+<table border="0">
 <tr>
 <td> Email Address </td>
 <td><input type = "text" name = "email" /></td>
@@ -79,21 +84,15 @@ include('header2.php');
 </table>
 
 </form>
-
+<!-- Page info goes above-->
+<?php
+include('footer.php');
+?>
+</body>
 </html>
 
-parentFirstName VARCHAR(20),
-parentLastName VARCHAR(20),
-yearJoined INT(4),
-streetAddress VARCHAR(30),
-city VARCHAR(20),
-state VARCHAR(20),
-zip VARCHAR(20),
-homePhone VARCHAR(20),
-officePhone VARCHAR(20),
-cellPhone VARCHAR(20),
-email VARCHAR(20),
-password VARCHAR(40),
-accessLevel CHAR(1),
-overallAFD DEC(8,2),
-currentAFD DEC(8,2)
+
+
+
+
+</html>

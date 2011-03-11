@@ -22,42 +22,26 @@ ob_start();
    if ($row = mysqli_fetch_array($result))
    {
 	$_SESSION['userFirstName'] = $row['parentFirstName'];
-	#echo($_SESSION['userFirstName'] . "<br>");
 	$_SESSION['userLastName'] = $row['parentLastName'];
-	#echo($_SESSION['userLastName'] . "<br>");
 	$_SESSION['yearJoined'] = $row['yearJoined'];
-	echo($_SESSION['yearJoined'] . "<br>");
 	$_SESSION['streetAddress'] = $row['streetAddress'];
-	echo($_SESSION['streetAddress'] . "<br>");
 	$_SESSION['city'] = $row['city'];
-	echo($_SESSION['city'] . "<br>");
 	$_SESSION['state'] = $row['state'];
-	echo($_SESSION['state'] . "<br>");
 	$_SESSION['zip'] = $row['zip'];
-	echo($_SESSION['zip'] . "<br>");
 	$_SESSION['homePhone'] = $row['homePhone'];
-	echo($_SESSION['homePhone'] . "<br>");
 	$_SESSION['workPhone'] = $row['workPhone'];
-	echo($_SESSION['workPhone'] . "<br>");
 	$_SESSION['cellPhone'] = $row['cellPhone'];
-	echo($_SESSION['cellPhone'] . "<br>");
 	$_SESSION['accessLevel'] = $row['accessLevel'];
-	echo($_SESSION['accessLevel'] . "<br>");
 	$_SESSION['overallAFD'] = $row['overallAFD'];
-	echo($_SESSION['overallAFD'] . "<br>");
 	$_SESSION['currentAFD'] = $row['currentAFD'];
-	echo($_SESSION['currentAFD'] . "<br>");
 	$_SESSION['loggedIn'] = "true";
+	
+	
 	
      	//Begin a session and create a session variable in
 		//the $_SESSION array.
 		$_SESSION['user'] = $userName;
-		echo("<p>You are logged in as ");
-		
-		echo($_SESSION['userFirstName']);
-		
-		echo("</p>");
-   		echo "<p><a href=\"home.php\">Continue</a></p>";	
+
 		//Handle if admin
 		#if($row['accessLevel'] = 3){
 		 #$_SESSION['accessLevel'] = 3;
@@ -67,6 +51,8 @@ ob_start();
 		# $_SESSION['accessLevel'] = 1;
 	    #}
 		#$_SESSION['badLogin'] = 0;
+		
+		
    }
    else
     {
@@ -81,6 +67,7 @@ $_SESSION['badLogin'] = 1;
   
 </div>
 <?php
+#redirects to home.php after user logs in
 header('Location: home.php');
 ob_flush();
 ?>

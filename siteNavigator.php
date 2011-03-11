@@ -26,23 +26,6 @@
   <ul class="menu_main">
 	<li>
 
-	 <-- Error Checking Table -->
-	 <table>
-		<tr>
-			<td>Username:</td>
-			<td><?php echo($_SESSION['userFirstName']);?></td>
-		</tr>
-		<tr>
-			<td>AccessLevel:</td>
-			<td><?php echo($_SESSION['accessLevel']);?></td>
-		</tr>
-		<tr>
-			<td>badLogin:</td>
-			<td><?php echo($_SESSION['badLogin']);?></td>
-		</tr>
-		
-	 </table>
-
 	</li>
 	 <li class="item1"><a class="first" href="Home.php" >Home</a></li> 
      <?php

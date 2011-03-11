@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <head> 
 <title>Swim Rays</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
@@ -24,9 +28,22 @@
     <div id="menu_main"> 
   <ul class="menu_main"> 
 	 <li class="item1"><a class="first" href="Home.php" >Home</a></li> 
-     <li class="item2"><a  href="login.php" >Login</a></li> 
-     <li class="item3"><a  href="logout.php" >Logout</a></li>
+     <?php
+	 if($_SESSION['currentuser'] == NULL){
+	 ?>
+	 <li class="item2"><a  href="login.php" >Login</a></li> 
+     <?php
+	 }else{?>
+	 <li class="item3"><a  href="logout.php" >Logout</a></li>
+	 <?php
+	 } 
+	 $user_type = $_SESSION['accessLevel'];
+	 if($user_type > 1){
+	 ?>
 	 <li class="item3"><a  href="createAccount.php" >Register a Family</a></li> 
+	 <?php
+	 }
+	 ?>
   </ul> 
 </div> 
 </div> 

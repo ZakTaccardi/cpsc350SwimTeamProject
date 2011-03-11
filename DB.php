@@ -1,3 +1,3 @@
  <?php
-	$db = mysqli_connect('localhost', 'user', 'password', 'swimteam') or die('ERROR connecting to mysql server!');
+	$db = mysqli_connect('localhost', 'user', 'user', 'swimteam') or die('ERROR connecting to mysql server!');
 ?>

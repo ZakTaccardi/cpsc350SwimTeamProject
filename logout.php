@@ -6,6 +6,7 @@ include('header.php');
 <html>
 <body>
 <?php
+$_SESSION['accessLevel'] = 0;
 include('siteNavigator.php');
 ?>
 

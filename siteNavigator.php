@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <head> 
 <title>Swim Rays</title> 
@@ -26,12 +23,33 @@ session_start();
  <div id="contentBot"> 
   <div class="left"> 
     <div id="menu_main"> 
-  <ul class="menu_main"> 
+  <ul class="menu_main">
+	<li>
+
+	 <-- Error Checking Table -->
+	 <table>
+		<tr>
+			<td>Username:</td>
+			<td><?php echo($_SESSION['userFirstName']);?></td>
+		</tr>
+		<tr>
+			<td>AccessLevel:</td>
+			<td><?php echo($_SESSION['accessLevel']);?></td>
+		</tr>
+		<tr>
+			<td>badLogin:</td>
+			<td><?php echo($_SESSION['badLogin']);?></td>
+		</tr>
+		
+	 </table>
+
+	</li>
 	 <li class="item1"><a class="first" href="Home.php" >Home</a></li> 
      <?php
-	 if($_SESSION['currentuser'] == NULL){
+	 if(session_is_registered('loggedIn') == false){ 
 	 ?>
 	 <li class="item2"><a  href="login.php" >Login</a></li> 
+	 
      <?php
 	 }else{?>
 	 <li class="item3"><a  href="logout.php" >Logout</a></li>
@@ -40,7 +58,10 @@ session_start();
 	 $user_type = $_SESSION['accessLevel'];
 	 if($user_type > 1){
 	 ?>
-	 <li class="item3"><a  href="createAccount.php" >Register a Family</a></li> 
+	 <br>
+	 <li><br><span style="color:black;font-weight:bold;padding-left:25px;font-size:18px;">Admin</span></li> 
+	 <li class="item3"><a  href="createAccount.php" >Register a Family</a></li>
+	 
 	 <?php
 	 }
 	 ?>

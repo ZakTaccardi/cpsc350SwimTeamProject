@@ -35,6 +35,7 @@ if($_SESSION['badLogin'] == 1)
 alert("Incorrect Login Information");
 </script>
 <?php
+$_SESSION['badLogin'] = 0;
 }
 else
 {

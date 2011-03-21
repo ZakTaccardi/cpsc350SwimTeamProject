@@ -39,11 +39,26 @@
 	 <?php
 	 } 
 	 $user_type = $_SESSION['accessLevel'];
+	 	 if($user_type >= 1){
+	 ?>
+	 <br>
+	 <li><br><span style="color:black;font-weight:bold;padding-left:25px;font-size:18px;">Family</span></li> 
+	 <li class="item3"><a  href="createAccount.php" >Generate Order Form</a></li>
+	 <li class="item3"><a  href="deleteAccount.php" >Submit Order</a></li>
+	 <li class="item3"><a  href="updateAccount.php" >Update Your Information</a></li>
+	 <li class="item3"><a  href="changePassword.php" >Change Password</a></li>
+	 
+	 <?php
+	 }
+	 
 	 if($user_type > 1){
 	 ?>
 	 <br>
 	 <li><br><span style="color:black;font-weight:bold;padding-left:25px;font-size:18px;">Admin</span></li> 
-	 <li class="item3"><a  href="createAccount.php" >Register a Family</a></li>
+	 <li class="item3"><a  href="createAccount.php" >Confirm Orders</a></li>
+	 <li class="item3"><a  href="createAccount.php" >Register Family</a></li>
+	 <li class="item3"><a  href="deleteAccount.php" >Delete Family</a></li>
+	 <li class="item3"><a  href="updateAccount.php" >Update Family Information</a></li>
 	 
 	 <?php
 	 }

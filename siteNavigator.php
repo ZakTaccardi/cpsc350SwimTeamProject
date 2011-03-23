@@ -43,10 +43,13 @@
 	 ?>
 	 <br>
 	 <li><br><span style="color:black;font-weight:bold;padding-left:25px;font-size:18px;">Family</span></li> 
-	 <li class="item3"><a  href="createAccount.php" >Generate Order Form</a></li>
-	 <li class="item3"><a  href="deleteAccount.php" >Submit Order</a></li>
-	 <li class="item3"><a  href="updateAccount.php" >Update Your Information</a></li>
+	 <li class="item3"><a  href="generateOrder.php" >Generate/Submit Order Form</a></li>
+	 <!-- <li class="item3"><a  href="submitOrder.php" >Submit Order</a></li> -->
+	 <li class="item3"><a  href="updateFamily.php" >View/Edit Family Information</a></li>
 	 <li class="item3"><a  href="changePassword.php" >Change Password</a></li>
+	 <li class="item3"><a  href="addSwimmerFamily.php" >Add a Swimmer</a></li>
+	 <li class="item3"><a  href="deleteSwimmerFamily.php" >Remove a Swimmer</a></li>
+	 <li class="item3"><a  href="updateSwimmerFamily.php" >View/Edit Swimmer Information</a></li>
 	 
 	 <?php
 	 }
@@ -55,10 +58,10 @@
 	 ?>
 	 <br>
 	 <li><br><span style="color:black;font-weight:bold;padding-left:25px;font-size:18px;">Admin</span></li> 
-	 <li class="item3"><a  href="createAccount.php" >Confirm Orders</a></li>
-	 <li class="item3"><a  href="createAccount.php" >Register Family</a></li>
-	 <li class="item3"><a  href="deleteAccount.php" >Delete Family</a></li>
-	 <li class="item3"><a  href="updateAccount.php" >Update Family Information</a></li>
+	 <li class="item3"><a  href="confirmOrder.php" >Confirm Orders</a></li>
+	 <li class="item3"><a  href="registerFamily.php" >Register Family</a></li>
+	 <li class="item3"><a  href="deleteFamily.php" >Delete Family</a></li>
+	 <li class="item3"><a  href="updateFamilyAdmin.php" >View/Change Family Information</a></li>
 	 
 	 <?php
 	 }

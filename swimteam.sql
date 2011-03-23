@@ -8,9 +8,9 @@ GRANT ALL PRIVILEGES ON swimteam.* to 'user'@'localhost' IDENTIFIED BY 'user';
 CREATE TABLE swimmers
 (
 swimmerID VARCHAR(20),
-firstName VARCHAR(20),
-middleInitial CHAR(1),
-lastName VARCHAR(20),
+swimmerFirstName VARCHAR(20),
+swimmerMiddleInitial CHAR(1),
+swimmerLastName VARCHAR(20),
 birthday DATE,
 swimGroup VARCHAR(10)
 );

@@ -6,9 +6,16 @@ a:visited { }
  
 h1 { color: #9a2825; font:bold 20px Georgia Arial, Helvetica, sans-serif; margin: 10px 0px 10px 0px; }
 h2 { color: #000000; font:bold 14px Arial, Helvetica, sans-serif; margin: 0px 0px 10px 0px; }
-h3 { color: #9a2825; font-size: 12px; font-weight: bold; margin:0; }
+h2 { color: #1b5369; font:bold 14px arial black,avant garde; margin: 0px 0px 10px 0px; }
+h3 { color: #9a2825; font-size: 16px; font-weight: bold; margin:0; }
 h4 { color: #000; font-size: 12px; font-weight: bold;  }
- 
+
+.navigatorHeader1{	color:9a2825;font-weight:bold;padding-left:25px;font-size:18px;	}
+.navigatorHeader2{	color:black;font-weight:bold;padding-left:25px;font-size:18px;	}
+
+p { color: #000000; font:bold 14px Arial, Helvetica, sans-serif; margin: 0px 0px 10px 0px; }
+
+
 html, body, p, div, input, select { font: normal 12px Arial, Helvetica, sans-serif; color: #666666; line-height: 150%; }
 form, input { padding:0; margin:0; }
  

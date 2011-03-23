@@ -14,8 +14,8 @@ ob_start();
 <?php
   include "DB.php";
   
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+$email = mysqli_real_escape_string($db, trim($_POST['email']));
+$password = mysqli_real_escape_string($db, trim($_POST['password']));
    $query = "select * from families WHERE email = '$email' AND password = SHA('$password')";
       
    $result = mysqli_query($db, $query);
@@ -35,42 +35,27 @@ ob_start();
 	$_SESSION['overallAFD'] = $row['overallAFD'];
 	$_SESSION['currentAFD'] = $row['currentAFD'];
 	$_SESSION['loggedIn'] = "true";
-	
-	
-	
      	//Begin a session and create a session variable in
 		//the $_SESSION array.
-		$_SESSION['user'] = $userName;
+		$_SESSION['user'] = $userName;		
 
-		//Handle if admin
-		#if($row['accessLevel'] = 3){
-		 #$_SESSION['accessLevel'] = 3;
-		#}else if($row['accessLevel'] = 2){
-		# $_SESSION['accessLevel'] = 2;
-	    #}else{
-		# $_SESSION['accessLevel'] = 1;
-	    #}
-		#$_SESSION['badLogin'] = 0;
-		
-		
-   }
+	#redirects to home.php after user logs in
+	header('Location: home.php');
+	ob_flush();
+	}
    else
-    {
+    {$_SESSION['badLogin'] = 1;
 ?>
+
 <script type="text/javascript">
 window.location="login.php";
 </script>
 <?php
-$_SESSION['badLogin'] = 1;
 }
 ?>
   
 </div>
-<?php
-#redirects to home.php after user logs in
-header('Location: home.php');
-ob_flush();
-?>
+
  
 </body>
 </html>

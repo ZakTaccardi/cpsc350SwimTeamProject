@@ -36,10 +36,10 @@ overallAFD DEC(8,2),
 currentAFD DEC(8,2)
 );
 
-CREATE TABLE IF NOT EXISTS `gift_cards` (
+CREATE TABLE IF NOT EXISTS `giftCards` (
   `cardID` int(11) NOT NULL AUTO_INCREMENT,
   `orderFormCardID` varchar(10) NOT NULL,
-  `Name` varchar(60) NOT NULL,
+  `vendor` varchar(60) NOT NULL,
   `cost` double NOT NULL DEFAULT '0',
   `percent` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`cardID`)
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `gift_cards` (
 -- Dumping data for table `gift_cards`
 --
 
-INSERT INTO `gift_cards` (`cardID`, `orderFormCardID`, `Name`, `cost`, `percent`) VALUES
+INSERT INTO `giftCards` (`cardID`, `orderFormCardID`, `vendor`, `cost`, `percent`) VALUES
 (1, '214', 'Applebee''s', 25, 8),
 (2, '211', 'Applebee''s', 10, 8),
 (3, '203', 'Arby''s', 10, 8),
@@ -114,7 +114,7 @@ INSERT INTO `gift_cards` (`cardID`, `orderFormCardID`, `Name`, `cost`, `percent`
 (62, '506', 'TGIFriday''s', 10, 9),
 (63, '507', 'TGIFriday''s', 25, 9),
 (64, '512', 'Wendy''s', 10, 4),
-(65, '581', 'Aéropostale', 25, 8),
+(65, '581', 'Aeropostale', 25, 8),
 (66, '619', 'American Eagle', 25, 8),
 (67, '603', 'AutoZone', 25, 9),
 (68, '633', 'Bass Pro Shops', 25, 8),
@@ -262,7 +262,3 @@ INSERT INTO `gift_cards` (`cardID`, `orderFormCardID`, `Name`, `cost`, `percent`
 (210, '1', 'Giant', 50, 5),
 (211, '2', 'Bloom/ Food Lion', 50, 5),
 (212, '3', 'Kohl''s', 25, 5);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

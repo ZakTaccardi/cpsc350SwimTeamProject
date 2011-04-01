@@ -1,4 +1,4 @@
-
+<?php include('DB.php'); ?>
 <head> 
 <title>Swim Rays</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
@@ -27,7 +27,8 @@
 	<li>
 
 	</li>
-	 <li class="item1"><a class="first" href="Home.php" >Home</a></li> 
+	 <li class="item1"><a class="first" href="Home.php" >Home</a></li>
+	 <li class="item1"><a class="first" href="browseCards.php" >View Gift Cards</a></li> 
      <?php
 	 if(session_is_registered('loggedIn') == false){ 
 	 ?>

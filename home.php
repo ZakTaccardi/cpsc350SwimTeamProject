@@ -9,12 +9,17 @@ include('siteNavigator.php');
 ?>
 
 <!-- Page info goes below-->
-<h1>Welcome,&nbsp;
 	<?php
-	echo($_SESSION['userFirstName']);
+	if($_SESSION['userFirstName'] != NULL){
+		$name = $_SESSION['userFirstName'];
+		echo "<h1>Welcome $name!</h1>";
+	}else{
+		echo "<h1>Welcome Guest!</h1>";
+	}
 	?>
 </h1> 
 
+<p>Please feel free to browse the site!</p>
 <!-- Page info goes above-->
 <?php
 include('footer.php');

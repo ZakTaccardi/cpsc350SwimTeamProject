@@ -21,6 +21,7 @@ $password = mysqli_real_escape_string($db, trim($_POST['password']));
    $result = mysqli_query($db, $query);
    if ($row = mysqli_fetch_array($result))
    {
+    $_SESSION['familyID'] = $row['familyID'];
 	$_SESSION['userFirstName'] = $row['parentFirstName'];
 	$_SESSION['userLastName'] = $row['parentLastName'];
 	$_SESSION['yearJoined'] = $row['yearJoined'];

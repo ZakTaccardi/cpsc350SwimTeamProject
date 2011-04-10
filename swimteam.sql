@@ -36,7 +36,27 @@ overallAFD DEC(8,2),
 currentAFD DEC(8,2)
 );
 
-CREATE TABLE IF NOT EXISTS `giftCards` (
+CREATE TABLE IF NOT EXISTS `order` (
+  `orderID` int(11) NOT NULL AUTO_INCREMENT,
+  `familyID` int(11) NOT NULL,
+  `datePlaced` date NOT NULL,
+  `dateConfirmed` date DEFAULT NULL,
+  `totalPaid` double(8,2) NOT NULL,
+  PRIMARY KEY (`orderID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+
+CREATE TABLE IF NOT EXISTS `itemizedorder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cardID` int(11) NOT NULL,
+  `orderID` int(11) NOT NULL,
+  `quantityOrdered` int(11) NOT NULL,
+  `cost` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+
+
+CREATE TABLE IF NOT EXISTS `giftcards` (
   `cardID` int(11) NOT NULL AUTO_INCREMENT,
   `orderFormCardID` varchar(10) NOT NULL,
   `vendor` varchar(60) NOT NULL,
@@ -49,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `giftCards` (
 -- Dumping data for table `gift_cards`
 --
 
-INSERT INTO `giftCards` (`cardID`, `orderFormCardID`, `vendor`, `cost`, `percent`) VALUES
+INSERT INTO `giftcards` (`cardID`, `orderFormCardID`, `vendor`, `cost`, `percent`) VALUES
 (1, '214', 'Applebee''s', 25, 8),
 (2, '211', 'Applebee''s', 10, 8),
 (3, '203', 'Arby''s', 10, 8),

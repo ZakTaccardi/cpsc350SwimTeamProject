@@ -26,7 +26,7 @@ include('siteNavigator.php');
 <?php
 	/*get all gift card information*/
 	include "DB.php";
-	$giftCardQuery = "SELECT * FROM giftcards ORDER BY vendor;";
+	$giftCardQuery = "SELECT * FROM giftcards WHERE isAvailable > 0 ORDER BY vendor;";
 	$giftCardResult = mysqli_query($db, $giftCardQuery);
 	while($row = mysqli_fetch_array($giftCardResult)) {
 		$id = $row['cardID'];

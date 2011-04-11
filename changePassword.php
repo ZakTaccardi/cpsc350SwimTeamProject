@@ -12,7 +12,7 @@ include('siteNavigator.php');
 <h1>Change Password<h1>
 <h2>Here you can change your password</h2>
 
-<form action = "createAccountController.php" method = "post">
+<form action = "changePasswordController.php" method = "post">
 
 <table border="0">
 <tr>

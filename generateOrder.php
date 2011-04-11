@@ -7,6 +7,12 @@ include('header.php');
 <?php
 include('siteNavigator.php');
 ?>
+<!--generateOrder.php
+last modified by Patrick 10 Apr 2011
+displays all available gift cards within the database
+
+-->
+
 
 <!-- Page info goes below-->
 <h1>Generate Order Form</h1>
@@ -19,8 +25,6 @@ include('siteNavigator.php');
 <td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Cost</h3></td>
 <td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Percent Returned</h3></td>
 <td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Quantity</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Cost</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Amount Raised</h3></td>
 </tr>
 
 <?php
@@ -43,7 +47,9 @@ include('siteNavigator.php');
 	}
 ?> 
 
+<tr><td></td><td></td><td colspan="2"><input type = "submit" value = "Complete Order"/></td></tr>
 
+<!--
 <tr>
 <tr></tr><tr></tr><tr></tr>
 <td></td><td></td><td></td><td><h3>Totals:</h3></td>
@@ -51,7 +57,7 @@ include('siteNavigator.php');
 <td style="border-top-style:solid;">$<input type = "text" style="width:60px;" name = "totalAmountRaised" disabled="disabled"/></td>
 </tr> 
 <td></td><td></td><td></td><td></td>
-<td colspan="2"><input type = "submit" value = "Generate and Submit Order"/></td>
+<td colspan="2"><input type = "submit" value = "Generate and Submit Order"/></td> -->
 
 
 </table>

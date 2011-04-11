@@ -10,11 +10,72 @@ include('siteNavigator.php');
 
 <!-- Page info goes below-->
 <h1>Confirm Orders</h1>
-<h2>Here an administrator can view submitted orders pending confirmation when payment has been received.</h2>
-<select>
-  <option value="volvo">Order (by Family Name)</option>
+<h2>View submitted orders pending confirmation when payment has been received.</h2>
+<h3>Order by:</h3>
+<form action = 'confirmOrder.php' method = 'post'>
+<select name = 'menu'>
+  <option value="name">Family Name</option>
+  <option value="order">Order Number</option>
+  <option value="date">Date</option>
+  <option value="value">Total Paid</option>
 </select>
+<br/><input type = "submit" value = "Sort" />
 
+<table>
+<tr>
+	<th>Family Name</th>
+	<th>Order Number</th>
+	<th>Date Placed</th>
+	<th>Total Paid</th>
+</tr>
+
+<?php
+	include "DB.php";
+	$option = $_POST['menu'];
+	$query = "SELECT f.parentLastName name, o.orderID orderID, o.familyID familyID, o.datePlaced 
+		datePlaced, o.totalPaid total FROM swimteam.order o INNER JOIN families f ON o.dateConfirmed IS NULL AND 
+		o.familyID = f.familyID ORDER BY ";
+	if ($option == "name"){
+		echo "name";
+		$query = $query."f.parentLastName;";
+	}else if($option == "order"){
+		echo "order";
+		$query = $query."o.orderID";
+	}else if ($option == "date"){
+		echo "date";
+		$query = $query."o.datePlaced;";
+	}else if ($option == "value"){
+		echo "value";
+		$query = $query."o.totalPaid;";
+	}else{
+		echo "derp";
+		$query = $query."o.orderID";
+	}
+	$result = mysqli_query($db,$query);
+	while ($row = mysqli_fetch_array($result)){
+		$name = $row['name'];
+		$orderID = $row['orderID'];
+		$familyID = $row['familyID'];
+		$datePlaced = $row['datePlaced'];
+		$total = $row['total'];
+		echo "
+		<tr>
+			<td>$name</td>
+			<td>$orderID</td>
+			<td>$datePlaced</td>
+			<td>$total</td>
+			<td><input type = 'submit' value = 'review' action = 'home.php'/></td>
+			<td><input type = 'submit' value = 'confirm' action = 'home.php'</td>
+		</tr>
+		";
+	}
+?>
+</table>
+
+</form>
+
+
+<!--
 <table>
 <tr>
 <td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Gift Card</h3></td>
@@ -63,7 +124,7 @@ include('siteNavigator.php');
 </tr>
 <td></td><td></td><td></td><td></td>
 <td colspan="2"><input type = "submit" value = "Confirm Order" /</td>
-</table>
+</table> -->
 </div> <!-- Page info goes above-->
 <?php
 include('footer.php');

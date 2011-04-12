@@ -33,7 +33,7 @@ include('siteNavigator.php');
 	<!--<tr><td></td></tr> -->
 </table>
 </form>
-
+<form action = 'giftCardEditor.php' method = 'post'>
 <?php
 	//we can only display this page if user is admin.
 	include "DB.php";
@@ -47,7 +47,7 @@ include('siteNavigator.php');
 				<th>Percent</th>
 				<th>Available?</th>
 			</tr>";
-		$query = "SELECT vendor, cost, percent, isAvailable FROM giftcards WHERE ";
+		$query = "SELECT vendor, orderFormCardID id, cost, percent, isAvailable FROM giftcards WHERE ";
 		if ($searchtype == 'vendorID'){
 			$vendorIDtext = $_POST['searchtext'];
 			$sanitizedText = mysqli_real_escape_string($db, $vendorIDtext);
@@ -60,6 +60,7 @@ include('siteNavigator.php');
 	
 		$result = mysqli_query($db, $query);
 		while ($row = mysqli_fetch_array($result)){
+			$id = $row['id'];
 			$vendor = $row['vendor'];
 			$cost = "$".$row['cost'].".00";
 			$percent = $row['percent']."%";
@@ -70,18 +71,16 @@ include('siteNavigator.php');
 			}
 			echo "
 				<tr>
-					<td >$vendor</td>
+					<td>$vendor</td>
 					<td>$cost</td>
 					<td>$percent</td>
 					<td>$isAvailable</td>
-					<td><input type = 'submit' value = 'edit'/></td>
+					<td><input type = 'submit' value = 'edit' name = '$id'/></td>
 				</tr>";
 		}
-
-		echo "</table>";
 	}
 ?>
-
+</table></form>
 
 
 <!-- Page info goes above-->

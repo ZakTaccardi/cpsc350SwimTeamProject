@@ -1,3 +1,4 @@
+drop database SwimTeam;
 create database SwimTeam;
 use SwimTeam;
 

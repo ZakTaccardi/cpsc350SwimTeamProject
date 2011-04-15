@@ -13,7 +13,7 @@
 <body id="page" onload="initULMenu('menu_main')"> 
 <div id="header" class="canvas"> 
   <div id="headerTransparent"> 
-    <div id="logo"><a href="index.php?src="><h1>Stingrays Swim Team</h1></a></div><!-- end logo --> 
+    <div id="logo"><a href="Home.php"><h1>Stingrays Swim Team</h1></a></div><!-- end logo --> 
     <div id="headerMenu"></div> 
   </div> 
 </div> 

@@ -17,7 +17,7 @@ $query = "SELECT * FROM giftCards ORDER BY vendor";
 
 $result = mysqli_query($db, $query);
 
-echo "<table>\n<tr><th><h3>Card Name</h3></th><th><h3>Cost</h3></th><th><h3>Percent Awarded</h3></th></tr>\n\n";
+echo "<table>\n<tr><th><h3 style=\"text-align:left\">Card Name</h3></th><th><h3 style=\"text-align:left\">Cost</h3></th><th><h3 style=\"text-align:left\">Percent Awarded</h3></th></tr>\n\n";
 
 while($row = mysqli_fetch_array($result)) 
 {

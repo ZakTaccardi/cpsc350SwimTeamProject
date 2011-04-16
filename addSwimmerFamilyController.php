@@ -21,7 +21,8 @@ ob_start();
   $addQuery = "INSERT INTO swimmers (swimmerFirstName, swimmerMiddleInitial, swimmerLastName, birthday, swimGroup) 
 				VALUES ('$swimmerFirstName', '$swimmerMI', '$swimmerLastName', '$swimmerBirthday', '$swimmerGroup');";
   $result = mysqli_query($db, $addQuery);
-  echo "swimmer was added using this query: ";
-  echo $addQuery;
+
+  echo "<h3>You have successfully added a swimmer.</h3>
+		<h2><a href = 'Home.php'>Go to your homepage</a></h2>";
   
 ?>

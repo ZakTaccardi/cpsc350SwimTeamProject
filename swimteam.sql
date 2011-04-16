@@ -68,6 +68,37 @@ CREATE TABLE IF NOT EXISTS `giftcards` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=213 ;
 
 --
+-- Tester accounts
+--
+INSERT INTO `swimteam`.`families` (
+`familyID` ,
+`email` ,
+`password` ,
+`parentFirstName` ,
+`parentLastName` ,
+`yearJoined` ,
+`streetAddress` ,
+`city` ,
+`state` ,
+`zip` ,
+`homePhone` ,
+`workPhone` ,
+`cellPhone` ,
+`accessLevel` ,
+`overallAFD` ,
+`currentAFD`
+)
+VALUES 
+('1', 'tester1', SHA('password1'), 'tester1', 'tester1', '2011', 'add', 'city', 'state', 'zip', '5', '5', '5', '1', '0', '0'),
+('2', 'tester2', SHA('password2'), 'tester2', 'tester2', '2011', 'add', 'city', 'state', 'zip', '5', '5', '5', '1', '0', '0'),
+('3', 'tester3', SHA('password3'), 'tester3', 'tester3', '2011', 'add', 'city', 'state', 'zip', '5', '5', '5', '2', '0', '0'),
+('4', 'tester4', SHA('password4'), 'tester4', 'tester4', '2011', 'add', 'city', 'state', 'zip', '5', '5', '5', '2', '0', '0');
+
+
+
+
+
+--
 -- Dumping data for table `giftcards`
 --
 

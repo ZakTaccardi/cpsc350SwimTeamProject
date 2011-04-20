@@ -7,14 +7,12 @@ patrick connelly
 <?php
 	include "DB.php";
 	$famID = $_SESSION['familyID'];
-	$first = $_POST['swimmerFirstNameNew'];
-	$mi = $_POST['swimmerMiddleInitialNew'];
-	$last = $_POST['swimmerLastNameNew'];
-	$birthday = $_POST['birthdayNew'];
-	$group = $_POST['swimGroupNew'];
+	$first = mysqli_real_escape_string($db,$_POST['swimmerFirstNameNew']);
+	$mi = mysqli_real_escape_string($db,$_POST['swimmerMiddleInitialNew']);
+	$last = mysqli_real_escape_string($db,$_POST['swimmerLastNameNew']);
+	$birthday = mysqli_real_escape_string($db,$_POST['birthdayNew']);
+	$group = mysqli_real_escape_string($db,$_POST['swimGroupNew']);
 
-	$swimmerID = -1;
-	//how get?
 	$swimmerID = $_POST['swimID'];
 	$update = "UPDATE swimmers SET 
 				swimmerFirstName = '$first',

@@ -59,7 +59,7 @@ include('siteNavigator.php');
 			<tr>
 			<td>Middle Initial </td>
 			<td><input type = 'text' name = 'swimmerMiddleInitial' disabled='disabled' value = '$middle'/></td>
-			<td><input type = 'text' name = 'swimmerMiddleInitialNew' '$middle'/></td>
+			<td><input type = 'text' name = 'swimmerMiddleInitialNew' value = '$middle'/></td>
 			</tr>
 			<tr>
 			<td>Last Name </td>

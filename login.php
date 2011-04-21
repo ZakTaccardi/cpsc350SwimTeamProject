@@ -24,7 +24,6 @@ include('siteNavigator.php');
 </tr>
 </table>
 <input type = "submit" value = "Login" id="submit" />
-<p>Not registered? Register <a href = "createAccount.php"> here </a>!</p>
 </form>
 
 <?php

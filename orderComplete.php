@@ -25,7 +25,7 @@ need to further include:
 <?php
 	include "DB.php";
 	$userID = $_SESSION['familyID'];
-	$recentOrderQuery = "SELECT * FROM swimteam.order WHERE familyID = '$userID' ORDER BY orderID DESC;";
+	$recentOrderQuery = "SELECT * FROM swimteam.order WHERE familyID = '$userID' AND totalPaid > 0 ORDER BY orderID DESC;";
 	$result = mysqli_query($db,$recentOrderQuery);
 	$name = $_SESSION['userLastName'];
 	while ($row = mysqli_fetch_array($result)){

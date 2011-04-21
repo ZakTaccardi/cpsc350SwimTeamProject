@@ -25,7 +25,7 @@ include('siteNavigator.php');
 	</tr>
 	<tr>
 		<td>Look up by vendor name</td>
-		<td><input type = "radio" name = "searchtype" value = 'vendorName'/></td>
+		<td><input type = "radio" name = "searchtype" value = 'vendorName' CHECKED /></td>
 	</tr>
 	<tr><td><br/>
 		<input type = "submit" value = "Search" id="submit" />

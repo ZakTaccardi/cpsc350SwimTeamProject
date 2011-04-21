@@ -71,11 +71,11 @@ include('siteNavigator.php');
 <td><input type = "text" name = "accessLevel" /></td>
 </tr>
 <tr>
-<td>Overall AFD </td>
+<td>Overall AFP </td>
 <td><input type = "text" name = "overallAFD" /></td>
 </tr>
 <tr>
-<td>Current AFD </td>
+<td>Current AFP </td>
 <td><input type = "text" name = "currentAFD" /></td>
 </tr>
 <tr>

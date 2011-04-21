@@ -63,8 +63,8 @@ $query = "select * from families WHERE familyID = '$familyID';";
 	$workPhone = $row['workPhone'];
 	$cellPhone = $row['cellPhone'];
 	$accessLevel = $row['accessLevel'];
-	$overallAFP = $row['overallAFD'];
-	$overallAFP = $row['currentAFD'];
+	$overallAFP = $row['overallAFP'];
+	$currentAFP = $row['currentAFP'];
 	
 }
 }
@@ -127,12 +127,12 @@ $query = "select * from families WHERE familyID = '$familyID';";
 <td><input type = "text" name = "accessLevel" disabled="disabled" value="<?php echo $accessLevel ; ?>"/></td>
 </tr>
 <tr>
-<td>Overall AFD </td>
+<td>Overall AFP </td>
 <td><input type = "text" name = "overallAFD" disabled="disabled" value="<?php echo $overallAFP ; ?>"/></td>
 </tr>
 <tr>
-<td>Current AFD </td>
-<td><input type = "text" name = "currentAFD" disabled="disabled" value="<?php echo $overallAFP ; ?>"/></td>
+<td>Current AFP </td>
+<td><input type = "text" name = "currentAFD" disabled="disabled" value="<?php echo $currentAFP ; ?>"/></td>
 </tr>
 <tr>
 <td>

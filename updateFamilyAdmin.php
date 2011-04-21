@@ -34,7 +34,6 @@ include('siteNavigator.php');
 <?php
 //print out the family info and prepare for edits
 	$option = $_POST['option'];
-	echo "option: $option";
 	if ($option != null){
 		$query = "SELECT * FROM families WHERE familyID = $option;";
 		$result = mysqli_query($db, $query);

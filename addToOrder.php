@@ -6,19 +6,20 @@
 	$orderID = $_POST['orderID'];
 	$type = $_POST['type'];
 	//let's scrape for things to insert
-	$query = "SELECT cardID, orderFormCardID, cost FROM swimteam.giftcards WHERE `type` = '$type';";
-	echo "searching through $type<br/>";
+	$query = "SELECT cardID, orderFormCardID, cost FROM swimteam.giftcards";
+	if ($type == 'all' or $type == null){
+		//get all of em!
+		$query = $query.";";
+	}else{
+		$query = $query." WHERE `type` = '$type';";
+	}
 	$result = mysqli_query($db, $query);
 	while($row = mysqli_fetch_array($result)){
-		echo "in while<br/>";
 		$id = $row['cardID'];
 		$quantity = $_POST["$id"];
-		echo "quantity: $quantity<br/>";
 		if ($quantity > 0){//new item to insert into itemized order
-			echo "found an item, inserting:<br/>";
 			$cost = $row['cost'];
 			$insertQ = "INSERT INTO itemizedorder VALUES('', '$id', '$orderID', '$quantity', '$cost');";
-			echo "$insertQ<br/>";
 			$insertR = mysqli_query($db,$insertQ);
 		}
 	}

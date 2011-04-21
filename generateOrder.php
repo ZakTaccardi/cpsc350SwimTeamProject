@@ -57,16 +57,13 @@ displays all available gift cards within the database
 	$result = mysqli_query($db, $orderQuery);
 	$orderID = -1;
 	//is there even a result?
-	echo "before if<br/>";
 	if ($row = mysqli_fetch_array($result)){
 		$confirmed = $row['dateConfirmed'];
 		$id = $row['orderID'];
 		if ($confirmed == NULL and $id != NULL){
 			//use most recent
-			echo "using most recent<br/>";
 			$orderID = $row['orderID'];
 		}else{
-			echo "creating new<br/>";
 			//create a new one!
 				//only insert the famID so we have a famID and orderID
 				//no datePlaced => no showing up for confirmation by admin
@@ -82,7 +79,6 @@ displays all available gift cards within the database
 			}
 		}
 	}else{
-		echo "creating new<br/>";
 		//create a new one!
 			//only insert the famID so we have a famID and orderID
 			//no datePlaced => no showing up for confirmation by admin
@@ -97,12 +93,9 @@ displays all available gift cards within the database
 			$orderID = $row['orderID'];
 		}
 	}
-	echo "after if<br/>";
 	//makes available to add items to cart!
 	//lets figure out what kind of gift cards to browse by!
 	$option = $_POST['menu'];
-	echo "<input type = 'hidden' name = 'orderID' value = '$orderID' />
-		  <input type = 'hidden' name = 'type' value = '$option' />";
 	if ($option == 'all' or $option == null){
 		//show all of em!
 		$giftCardQuery = "SELECT * FROM giftcards WHERE isAvailable > 0 ORDER BY vendor;";
@@ -112,18 +105,19 @@ displays all available gift cards within the database
 		$giftCardQuery = "SELECT * FROM giftcards WHERE isAvailable > 0 AND 
 						  type = '$option' ORDER BY vendor;";
 	}
+	echo "<input type = 'hidden' name = 'orderID' value = '$orderID' />
+		  <input type = 'hidden' name = 'type' value = '$option' />";
 	//tell em what they're browsing by
-	echo "<br/><br/><h3>Browsing $option</h3><br/>";
 	$giftCardResult = mysqli_query($db, $giftCardQuery);
 	while($row = mysqli_fetch_array($giftCardResult)) {
 		$id = $row['cardID'];
 		$name = $row['vendor'];
-		$cost = $row['cost'];
+		$cost = number_format($row['cost'],2);
 		$percent = $row['percent'];
 		echo "
 		<tr>
 		<td>$name</td>
-		<td>\$$cost</td>
+		<td width = 60>\$$cost</td>
 		<td>$percent%</td>
 		<td><input type = 'text' style = 'width:30px;' name = '$id' value = 0 /></td>
 		</tr>";

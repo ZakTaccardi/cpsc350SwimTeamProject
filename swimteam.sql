@@ -346,8 +346,10 @@ CREATE TABLE IF NOT EXISTS `swimmers` (
   `swimmerLastName` varchar(20) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `swimGroup` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`swimmerID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `familyID` int(11) NOT NULL,
+  PRIMARY KEY (`swimmerID`),
+  KEY `familyID` (`familyID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `swimmers`

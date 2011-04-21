@@ -44,8 +44,6 @@ Current issues:
 	}
 	
 	//open the input and output files
-	$header = fopen("orderforms/MANNAHeader.csv","r");
-	$body = fopen("orderforms/MANNABody.csv","r");
 	$fileName = "orderforms/".$name.$orderID.".csv"; 
 	$orderForm = fopen($fileName, "w");
 	
@@ -62,12 +60,9 @@ Current issues:
 			FROM swimteam.itemizedorder i INNER JOIN swimteam.giftcards gc
 			ON i.orderID = $orderID AND i.cardID = gc.cardID;";
 	$result = mysqli_query($db, $query);
-	/*while ($row = mysqli_fetch_array($result)){
-		foreach($row as $key => $value){
-			echo "$key => $value <br/>";
-		}
-		echo "<br/>";
-	}*/
+
+	
+	
 	$orderTotal = 0;
 	while($row = mysqli_fetch_array($result)){
 		$total = $row['qty'] * $row['c'];
@@ -77,18 +72,14 @@ Current issues:
 		$vendor = $row['vendor'];
 		$qty = $row['qty'];
 		$cost = "$".number_format($row['c'],2);
-		echo "$id $vendor $qty $cost $total<br/>";
 		fputcsv($orderForm,Array("$id","$vendor",'','','','','',"$qty","$cost","$formattedTotal"));
 	}
 	$formattedTotal = "$".number_format($orderTotal,2);
 	fputcsv($orderForm,Array());
 	fputcsv($orderForm,Array('','','','','','','','',"Total: ", "$formattedTotal"));
-	
-	fclose($header);
-	fclose($body);
 	fclose($orderForm);
 ?>
 
 <head>
 <meta HTTP-EQUIV="REFRESH" content="0; url=orderComplete.php">
-</head> 
+</head>

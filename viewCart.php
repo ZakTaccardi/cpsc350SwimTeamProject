@@ -17,6 +17,7 @@ include('siteNavigator.php');
 <h2>Here is what you've put down so far</h2>
 <?php
 	$orderID = $_POST['orderID'];
+	
 	$q = "SELECT gc.vendor name, io.quantityOrdered quantity, io.cost
 		FROM giftcards gc INNER JOIN itemizedorder io
 		ON io.cardID = gc.cardID AND io.orderID = '$orderID' ORDER BY io.cost;";
@@ -52,13 +53,19 @@ include('siteNavigator.php');
 	echo "
 	<tr><td></td><td></td><td></td><td></td></tr>
 	<tr><td></td><td></td><td><h3>Order Total:</h3></td><td align = 'right'><strong>$$total</strong></td><tr/>";
-	
+
 	//need a complete order button
-	echo "<tr><td></td><td></td><td></td><td><form action = 'completeOrder.php' method = 'post'>
+	echo "<tr><td></td><td></td><td></td><td>
+			
+			<form action = 'completeOrder.php' method = 'post'>
 			<input type = 'hidden' name = 'orderID' value = '$orderID'>
+			<input type = 'hidden' name = 'total' value = '$running_total'>
 			<input type = 'submit' value = 'Confirm order'>
 			</form></td></tr>
-			<td></td><td></td><td></td><td><form action = 'cancelOrder.php' method = 'post'>
+			
+			<td></td><td></td><td></td><td>
+			
+			<form action = 'cancelOrder.php' method = 'post'>
 			<input type = 'hidden' name = 'orderID' value = '$orderID'>
 			<input type = 'submit' value = 'Cancel order'>
 			</form></td></tr></table>";

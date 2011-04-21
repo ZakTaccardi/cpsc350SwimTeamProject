@@ -56,11 +56,10 @@ displays all available gift cards within the database
 					ORDER BY orderID DESC LIMIT 1;";
 	$result = mysqli_query($db, $orderQuery);
 	$orderID = -1;
-	//is there even a result?
-	if ($row = mysqli_fetch_array($result)){
+	while($row = mysqli_fetch_array($result)){
 		$confirmed = $row['dateConfirmed'];
-		$id = $row['orderID'];
-		if ($confirmed == NULL and $id != NULL){
+		$placed = $row['datePlaced'];
+		if ($confirmed == NULL and $placed == '0000-00-00'){
 			//use most recent
 			$orderID = $row['orderID'];
 		}else{
@@ -78,24 +77,11 @@ displays all available gift cards within the database
 				$orderID = $row['orderID'];
 			}
 		}
-	}else{
-		//create a new one!
-			//only insert the famID so we have a famID and orderID
-			//no datePlaced => no showing up for confirmation by admin
-		$q = "INSERT INTO swimteam.order (familyID) VALUES ('$famID');";
-		$r = mysqli_query($db,$q);
-		
-		//now get the orderID!
-		$q = "SELECT * FROM swimteam.order WHERE familyID = $famID
-				ORDER BY orderID DESC LIMIT 1;";
-		$r = mysqli_query($db,$q);
-		while($row = mysqli_fetch_array($r)){
-			$orderID = $row['orderID'];
-		}
 	}
-	//makes available to add items to cart!
 	//lets figure out what kind of gift cards to browse by!
 	$option = $_POST['menu'];
+	echo "<input type = 'hidden' name = 'orderID' value = '$orderID' />
+		  <input type = 'hidden' name = 'type' value = '$option' />";
 	if ($option == 'all' or $option == null){
 		//show all of em!
 		$giftCardQuery = "SELECT * FROM giftcards WHERE isAvailable > 0 ORDER BY vendor;";
@@ -105,31 +91,30 @@ displays all available gift cards within the database
 		$giftCardQuery = "SELECT * FROM giftcards WHERE isAvailable > 0 AND 
 						  type = '$option' ORDER BY vendor;";
 	}
-	echo "<input type = 'hidden' name = 'orderID' value = '$orderID' />
-		  <input type = 'hidden' name = 'type' value = '$option' />";
-	//tell em what they're browsing by
+
 	$giftCardResult = mysqli_query($db, $giftCardQuery);
 	while($row = mysqli_fetch_array($giftCardResult)) {
 		$id = $row['cardID'];
 		$name = $row['vendor'];
-		$cost = number_format($row['cost'],2);
+		$cost = $row['cost'];
 		$percent = $row['percent'];
 		echo "
 		<tr>
 		<td>$name</td>
-		<td width = 60>\$$cost</td>
+		<td>\$$cost</td>
 		<td>$percent%</td>
 		<td><input type = 'text' style = 'width:30px;' name = '$id' value = 0 /></td>
 		</tr>";
 	}
 	
 	echo "
-	<tr><td></td><td></td><td></td><td><input type = 'submit' value = 'Add To Cart'/></td>
+	<tr><td></td><td></td><td colspan='2'><input type = 'submit' value = 'Add To Cart'/></td></tr>
 	</form>
 	
 	<form action = 'viewCart.php' method = 'post'>
 		<input type = 'hidden' name = 'orderID' value = '$orderID' />
-		<td><input type = 'submit' value = 'View Cart'/></td></tr>
+		<input type = 'submit' value = 'View Cart'/>
+		<br/><br/><h3>Browsing $option</h3><br/>
 	</form>
 	"
 ?> 

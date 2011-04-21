@@ -16,11 +16,13 @@ include('siteNavigator.php');
 <?php
 	//confirm, cancel, or 
 	$id = $_POST['orderID'];
+	$total = $_POST['total'];
 	echo
 	"
-	<form action = 'something to generate and complete?.php' method = 'post'>
+	<form action = 'submitOrderController.php' method = 'post'>
 		<input type = 'hidden' name = 'orderID' value = '$id'/>
-		<input type = 'submit' value = 'Complete order'>
+		<input type = 'hidden' name = 'total' value = '$total'/>
+		<input type = 'submit' value = 'Complete and submit order'>
 	</form>
 	<br/><br/>
 	<form action = 'cancelOrder.php' method = 'post'>

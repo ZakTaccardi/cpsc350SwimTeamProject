@@ -13,12 +13,25 @@ general purpose:
 
 
 current issues:
-	change table structure for gift cards i think...TWO PRIMARY KEYS! not working well.
 -->
 
 
 <?php
 	include "DB.php";
+	//order and itemized order have already been inserted
+		//update the date and total of the order
+	$id = $_POST['orderID'];
+	$total = $_POST['total'];
+	$date = date('Y-m-d',time());
+	$updateQ = "UPDATE swimteam.order SET totalPaid = '$total', datePlaced = '$date' WHERE orderID = '$id'";
+	//echo "$updateQ<br/>";
+	$updateR = mysqli_query($db,$updateQ);
+	
+		//generate the order form
+	
+	/*
+	
+	
 	//get all the id's so we can figure out what to insert into the order table//
 	$query = "SELECT cardID, orderFormCardID, cost FROM swimteam.giftcards;";
 	$result = mysqli_query($db, $query);
@@ -67,7 +80,7 @@ current issues:
 		//this updates the order insertion after the total is computed.
 		$updateOrderQuery = "UPDATE swimteam.order SET totalPaid = '$orderTotal' WHERE orderID = '$orderID';";
 		$updateOrderResult = mysqli_query($db, $updateOrderQuery);
-	}
+	}*/
 ?>
 
 <!-- this code redirects to the next html page, generating the actual order form in excel -->

@@ -20,7 +20,7 @@ include('siteNavigator.php');
   <option value="value">Total Paid</option>
 </select>
 <br/><input type = "submit" value = "Sort" />
-
+</form>
 <table>
 <tr>
 	<th>Family Name</th>
@@ -32,23 +32,21 @@ include('siteNavigator.php');
 <?php
 	include "DB.php";
 	$option = $_POST['menu'];
+	$famID = $_SESSION['familyID'];
+	
+	//doesn't scan for in-progress orders or for orders from this individual user, so they can't confirm their own order.
 	$query = "SELECT f.parentLastName name, o.orderID orderID, o.familyID familyID, o.datePlaced 
 		datePlaced, o.totalPaid total FROM swimteam.order o INNER JOIN families f ON o.dateConfirmed IS NULL AND 
-		o.familyID = f.familyID ORDER BY ";
+		o.familyID = f.familyID AND o.datePlaced <> '0000-00-00' AND o.familyID <> '$famID' ORDER BY ";
 	if ($option == "name"){
-		echo "name";
 		$query = $query."f.parentLastName;";
 	}else if($option == "order"){
-		echo "order";
 		$query = $query."o.orderID";
 	}else if ($option == "date"){
-		echo "date";
 		$query = $query."o.datePlaced;";
 	}else if ($option == "value"){
-		echo "value";
 		$query = $query."o.totalPaid;";
 	}else{
-		echo "derp";
 		$query = $query."o.orderID";
 	}
 	$result = mysqli_query($db,$query);
@@ -64,67 +62,23 @@ include('siteNavigator.php');
 			<td>$orderID</td>
 			<td>$datePlaced</td>
 			<td>$total</td>
-			<td><input type = 'submit' value = 'review' action = 'home.php'/></td>
-			<td><input type = 'submit' value = 'confirm' action = 'home.php'</td>
+			<td>	
+				<a href ='download.php?download_file=$name$orderID.csv'>Review</a>
+			</td>
+			
+			<td>
+				<form action = 'confirmOrderController.php' method = 'post'>
+				<input type = 'hidden' value = '$orderID' name = 'orderID'>
+				<input type = 'hidden' value = '$familyID' name = 'famID'>
+				<input type = 'submit' value = 'confirm' action = 'confirmOrderController.php' />
+				</form>
+			</td>
 		</tr>
 		";
 	}
+	echo "$name$orderID.csv";
 ?>
 </table>
-
-</form>
-
-
-<!--
-<table>
-<tr>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Gift Card</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Cost</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Percent Returned</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Quantity</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Cost</h3></td>
-<td style="font-weight:bold;" align="left"><h3 style="text-decoration:underline;">Amount Raised</h3></td>
-</tr>
-
-<tr>
-<td>Applebees </td>
-<td>$25</td>
-<td>8%</td>
-<td><input type = "text" style="width:30px;" name = "quantityOrdered" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "cost1" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "amountRaised1" disabled="disabled"/></td>
-</tr>
-<tr>
-<td>Applebees </td>
-<td>$50</td>
-<td>8%</td>
-<td><input type = "text" style="width:30px;" name = "quantityOrdered" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "cost2" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "amountRaised2" disabled="disabled"/></td>
-</tr>
-<td>Outback </td>
-<td>$25</td>
-<td>11%</td>
-<td><input type = "text" style="width:30px;" name = "quantityOrdered" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "cost3" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "amountRaised3" disabled="disabled"/></td>
-</tr>
-<td>Outback </td>
-<td>$50</td>
-<td>11%</td>
-<td><input type = "text" style="width:30px;" name = "quantityOrdered" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "cost4" disabled="disabled"/></td>
-<td>$<input type = "text" style="width:60px;" name = "amountRaised4" disabled="disabled"/></td>
-</tr>
-<tr>
-<tr></tr><tr></tr><tr></tr>
-<td></td><td></td><td></td><td><h3>Totals:</h3></td>
-<td style="border-style:solid;border-top-style:solid;">$<input type = "text" style="width:60px;" name = "totalCost" disabled="disabled"/></td>
-<td style="border-top-style:solid;">$<input type = "text" style="width:60px;" name = "totalAmountRaised" disabled="disabled"/></td>
-</tr>
-<td></td><td></td><td></td><td></td>
-<td colspan="2"><input type = "submit" value = "Confirm Order" /</td>
-</table> -->
 </div> <!-- Page info goes above-->
 <?php
 include('footer.php');

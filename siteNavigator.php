@@ -63,7 +63,8 @@
 	 <li class="item3"><a  href="registerFamily.php" >Register Family</a></li>
 	 <li class="item3"><a  href="deleteFamily.php" >Delete Family</a></li>
 	 <li class="item3"><a  href="updateFamilyAdmin.php" >View/Change Family Information</a></li>
-	 <li class="item3"><a  href="browseFamilies.php" >View All Families</a></li>
+	 <li class="item3"><a  href="addGiftCard.php" >Add Gift Card</a></li>
+	 <li class="item3"><a  href="editGiftCard.php" >Edit Existing Gift Card</a></li>
 	 <?php
 	 }
 	 ?>

@@ -60,7 +60,8 @@ displays all available gift cards within the database
 	if ($row = mysqli_fetch_array($result)){
 		$confirmed = $row['dateConfirmed'];
 		$id = $row['orderID'];
-		if ($confirmed == NULL and $id != NULL){
+		$datePlaced = $row['datePlaced'];
+		if ($confirmed == NULL and $id != NULL and $datePlaced == '0000-00-00'){
 			//use most recent
 			$orderID = $row['orderID'];
 		}else{

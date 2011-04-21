@@ -76,7 +76,6 @@ include('siteNavigator.php');
 		</tr>
 		";
 	}
-	echo "$name$orderID.csv";
 ?>
 </table>
 </div> <!-- Page info goes above-->

@@ -23,16 +23,16 @@
 	//round down (sorry, just want it to be accurate)
 	$reduction = round($total_return,2, PHP_ROUND_HALF_DOWN);
 	
-	$currentAFPQ = "SELECT currentAFP FROM families WHERE familyID = '$famID';";
+	$currentAFPQ = "SELECT currentAFD FROM families WHERE familyID = '$famID';";
 	$res = mysqli_query($db,$currentAFPQ);
 	$current = 0;
 	while($row = mysqli_fetch_array($res)){
-		$current = $row['currentAFP'];
+		$current = $row['currentAFD'];
 	}
 	echo "debt: $current <br/>total return:$total_return<br/>";
 	
 	$update = $current - $reduction;
-	$reductionQ = "UPDATE families SET currentAFP = '$update' WHERE familyID = '$famID';";
+	$reductionQ = "UPDATE families SET currentAFD = '$update' WHERE familyID = '$famID';";
 	echo $reductionQ."<br/>";
 	$r = mysqli_query($db, $reductionQ);
 	$date = date('Y-m-d',time());

@@ -46,6 +46,7 @@
 	 <li><br><span style="color:black;font-weight:bold;padding-left:25px;font-size:18px;">Family</span></li> 
 	 <li class="item3"><a  href="generateOrder.php" >Generate/Submit Order Form</a></li>
 	 <li class="item3"><a  href="orderComplete.php" >View Order History</a></li>
+	 <li class="item3"><a  href="viewAFP.php" >View AFP Statement</a></li>
 	 <!-- <li class="item3"><a  href="submitOrder.php" >Submit Order</a></li> -->
 	 <li class="item3"><a  href="updateFamily.php" >View/Edit Family Information</a></li>
 	 <li class="item3"><a  href="changePassword.php" >Change Password</a></li>

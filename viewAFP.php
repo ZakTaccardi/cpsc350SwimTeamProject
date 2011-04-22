@@ -1,16 +1,18 @@
 <?php 
 session_start();
-include('header.php');
+//include('header.php');
 ?>
 <html>
 <body>
 <?php
-include('siteNavigator.php');
+//include('siteNavigator.php');
 ?>
 
 <!-- Page info goes below-->
 
 <?php
+
+echo "<br/><br/><a href = 'home.php'>return home</a><br/><br/>";
 include('DB.php');
 
 $famID = $_SESSION['familyID'];
@@ -28,6 +30,14 @@ $cellPhone = $_SESSION['cellPhone'];
 $accessLevel = $_SESSION['accessLevel'];
 $overallAFD = $_SESSION['overallAFD'];
 $currentAFD = $_SESSION['currentAFD'];
+/*better calculation for AFP*/
+$Q = "SELECT currentAFD, overallAFD FROM families WHERE familyID = $famID;";
+$r = mysqli_query($db,$Q);
+while($row = mysqli_fetch_array($r)){
+	$overallAFD = $row['overallAFD'];
+	$currentAFD = $row['currentAFD'];
+}
+
 
 $savings = $overallAFD - $currentAFD;
 
@@ -686,9 +696,10 @@ echo "
 
 ?>
 
-</div> <!-- Page info goes above-->
+<!--</div> <!-- Page info goes above-->
+
 <?php
-include('footer.php');
+//include('footer.php');
 ?>
-</body>
-</html>
+<!--</body>
+</html> -->
